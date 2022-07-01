@@ -1,8 +1,4 @@
-nclude <stdlib.h>
-
-#include <time.h>
-
-#include <stdio.h>
+nclude <stdio.h>
 
 
 
@@ -20,29 +16,29 @@ int main(void)
 
 {
 
-	int n;
+	int ch;
 
 
 
-	srand(time(0));
-
-	n = rand() - RAND_MAX / 2;
-
-	if (n > 0)
-
-			printf("%d is positive\n", n);
-
-	if (n == 0)
-
-			printf("%d is zero\n", n);
-
-	if (n < 0)
+	for (ch = 97; ch <= 122; ch++)
 
 	{
 
-			printf("%d is negative\n", n);
+		putchar(ch);
 
 	}
+
+	for (ch = 65; ch <= 90; ch++)
+
+	{
+
+		putchar(ch);
+
+	}
+
+	putchar(10); /* this is an ascii code for new line*/
+
+
 
 	return (0);
 
