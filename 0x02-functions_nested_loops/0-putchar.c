@@ -1,11 +1,12 @@
 #include "main.h"
 
-/**
- * main - Entry begins
- * Return: nothing, return void
- */
 
-int _putchar(char c);
+/**
+ *  * main - Entry begins
+ *   * Return: nothing, return void
+ *    */
+
+int main(void)
 {
 	putchar('');
 	_putchar('p');
@@ -19,3 +20,4 @@ int _putchar(char c);
 
 	return (0);
 }
+
