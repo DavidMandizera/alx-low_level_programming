@@ -1,74 +1,85 @@
-#include <main.h>
+#include <stdio.h>
+
+
 
 /**
- * main - first 50 fibonatchi.
  *
- *  Return: void.
- */
+ *  * main - block to be executed
+ *
+ *   * Description: computes
+ *
+ *    * Return: 0
+ *
+ *     */
+
 int main(void)
 
 {
 
-		unsigned long int i, i0, i1, j, j0, j1, e, e0, e1, y, k;
+		unsigned long int i;
+
+			unsigned long int bef = 1;
+
+				unsigned long int aft = 2;
+
+					unsigned long int l = 1000000000;
+
+						unsigned long int bef1;
+
+							unsigned long int bef2;
+
+								unsigned long int aft1;
+
+									unsigned long int aft2;
 
 
 
-			i = 1;
-
-				j = 2;
-
-					e = i + j;
+										printf("%lu", bef);
 
 
 
-						printf("%lu, ", i);
+											for (i = 1; i < 91; i++)
 
-							printf("%lu, ", j);
+													{
 
-								for (y = 3; y < 89; y++)
+																printf(", %lu", aft);
 
-										{
+																		aft += bef;
 
-													printf("%lu, ", e);
+																				bef = aft - bef;
 
-															i = j;
+																					}
 
-																	j = e;
+												bef1 = (bef / l);
 
-																			e = i + j;
+													bef2 = (bef % l);
 
-																				}
+														aft1 = (aft / l);
 
-									j0 = j / 1000000000;
+															aft2 = (aft % l);
 
-										j1 = j % 1000000000;
 
-											e0 = e / 1000000000;
 
-												e1 = e % 1000000000;
+																for (i = 92; i < 99; ++i)
 
-													for (k = 89; k < 98; k++)
+																		{
 
-															{
+																					printf(", %lu", aft1 + (aft2 / l));
 
-																		printf("%lu%lu, ", e0, e1);
+																							printf("%lu", aft2 % l);
 
-																				i0 = j0;
+																									aft1 = aft1 + bef1;
 
-																						i1 = j1;
+																											bef1 = aft1 - bef1;
 
-																								j0 = e0;
+																													aft2 = aft2 + bef2;
 
-																										j1 = e1;
+																															bef2 = aft2 - bef2;
 
-																												e0 = i0 + j0 + ((i1 + j1) / 1000000000);
+																																}
 
-																														e1 = (i1 + j1) % 1000000000;
+																	printf("\n");
 
-																															}
-
-													printf("%lu%lu\n", e0, e1);
-
-														return (0);
+																		return (0);
 
 }
