@@ -1,16 +1,11 @@
 #include <stdio.h>
 
-
-
 /**
+ * main - block to be executed
+ * Description: computes
  *
- *  * main - block to be executed
- *
- *   * Description: computes
- *
- *    * Return: 0
- *
- *     */
+ * Return: 0
+ */
 
 int main(void)
 
