@@ -1,1 +1,46 @@
-#include<stdio.h> #include<stdlib.h> int main() { int n,i,j=0,count=0,temp=0,l=0,m=0,p=0,N; int a[1000]={0},b[1000]={0},c[1000]={0}; scanf("%d",&N); n=N;/* count the number of digits in 'N' */ while(N!=0) { N/=10; count++; }/* store the digits of integer in an array a[]*/ for(i=count-1;i>=0;i--) { a[i]=n%10; n/=10; }/* make a copy of a[] and store it in b[] before storing in b[] we just remove the duplicate elements by makeing them -1 */ for(i=0;i<count;i++) { b[l]=a[i]; l++; for(j=i+1;j<count;j++) { if(a[i]==a[j]) { a[j]=-1; } } }/* bubble sorting the b[] array so the elements now in b[] are sorted */ for(i=0;i<count-1;i++) { for(j=0;j<count-i-1;j++) { if(b[j]>b[j+1]) { temp=b[j]; b[j]=b[j+1]; b[j+1]=temp; } } }/* since we dont need the negative elements we remove them and store the positive elements of b[] in c[] */ for(i=0;i<l;i++) { if(b[i]>-1) { c[p]=b[i]; p++; } }/* if there is only one positive element in the array c[] then there would be no second largest value hence we print "-1" if 'p'==1 */ if(p==1) { m=-1; }/* if the value of p is greater than 1 the second largest element would be the second element from the last of the array , hence we print it */ else { m=c[p-2]; } printf("%d",m); }
+#include "main.h"
+
+/**
+ * largest_number - returns the largest of 3 numbers
+ * @a: first integer
+ * @b: second integer
+ * @c: third integer
+ * Return: largest number
+ */
+
+int largest_number(int a, int b, int c)
+{
+	int largest;
+
+	if (a > b && b > c)
+		largest = a;
+	else if (a > b && b < c)
+	{
+		if (a > c)
+			largest = a;
+		else
+			largest = c;
+	}
+	else if (b > a && a > c)
+		largest = b;
+	else if (b > a && a < c)
+	{
+		if (b > c)
+			largest = b;
+		else
+			largest = c;
+	}
+	else if (a == b && a == c)
+		largest = a;
+	else
+	{
+		if ((a == b && a > c) || (a == c && a > b) || (b == c && a > b))
+			largest = a;
+		else if ((a == c && a < b) || (b == c && a < b))
+			largest = b;
+		else
+			largest = c;
+	}
+	return (largest);
+
+}
