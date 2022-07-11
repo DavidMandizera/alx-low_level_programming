@@ -5,20 +5,17 @@
  * @s:pointer char
  * return:void
  */
-
 void print_rev(char *s)
 {
-	int i, n;
+	int i = 0;
 
-	for (i = 0; s[i] != '\0'; i++)
+	while (*(s + i))
+		i++;
+	i = i - 1;
+	while (i >= 0)
 	{
-		continue;
-	}
-	n = i - 1;
-	for (i = n; i >= 0 ; i--)
-	{
-		_putchar(s[i]);
+		_putchar(*(s + i));
+		i--;
 	}
 	_putchar('\n');
-	return;
 }
